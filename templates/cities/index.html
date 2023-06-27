@@ -2,7 +2,7 @@
 {% block content %}
 
 <h3>Seek out new life and new civilisations...</h3>
-{% for city in all_cities %}
+<ul>{% for city in all_cities %}
   <div class="explored_cities">
       <p><a href="/cities/{{city.id}}">{{city.name}}</a></p>
       <div class="city_information">
@@ -16,7 +16,7 @@
      {% endif %}   
   </div>
 
-{% endfor %}
+{% endfor %}</ul>
 
 <div>
    <span><form action="/cities/new" method="GET">
