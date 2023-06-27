@@ -53,7 +53,7 @@ def delete(id):
 
 
 def update(planet):
-    sql    = """UPDATE planets SET (name, planet_class, native species, rating) = (%s, %s, %s, %s)
+    sql    = """UPDATE planets SET (name, planet_class, native_species, rating) = (%s, %s, %s, %s)
                 WHERE id = %s"""
     values = [planet.name, planet.planet_class, planet.native_species, planet.rating]
     run_sql(sql, values)

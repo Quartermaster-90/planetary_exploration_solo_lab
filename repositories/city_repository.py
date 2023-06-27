@@ -76,15 +76,15 @@ def cities_for_planet(planet):
     return cities
 
 
-def city_names_for_planet(planet):
-    cities = []
+# def city_names_for_planet(planet):
+#     cities = []
 
-    sql     = "SELECT name FROM cities WHERE planet_id = %s"
-    values  = [planet.id]
-    results = run_sql(sql, values)
+#     sql     = "SELECT name FROM cities WHERE planet_id = %s"
+#     values  = [planet.id]
+#     results = run_sql(sql, values)
 
-    for row in results:
-        city = City(row['name'])
-        cities.append(city)
+#     for row in results:
+#         city = City(row['name'])
+#         cities.append(city)
 
-    return cities
+#     return cities
