@@ -15,6 +15,7 @@ def save(city):
     city.id = id
     return city
 
+
 def select_all():
     cities = []
 
@@ -28,6 +29,7 @@ def select_all():
     
     return cities
 
+
 def select(id):
     city = None
     sql = "SELECT * FROM cities WHERE id = %s"
@@ -40,20 +42,24 @@ def select(id):
     
     return city
 
+
 def delete_all():
     sql = "DELETE FROM cities"
     run_sql(sql)
+
 
 def delete(id):
     sql = "DELETE FROM cities WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
+
 def update(city):
     sql = """UPDATE cities SET (name, planet_id, rating, comments, explored) = (%s, %s, %s, %s, %s)
              WHERE id = %s"""
     values = [city.name, city.planet.id, city.rating, city.comments, city.explored]
     run_sql(sql, values)
+
 
 def cities_for_planet(planet):
     cities = []

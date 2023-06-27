@@ -14,6 +14,7 @@ def save(planet):
     planet.id = id
     return planet
 
+
 def select_all():
     planets = []
 
@@ -26,6 +27,7 @@ def select_all():
     
     return planets
 
+
 def select(id):
     planet = None
     sql = "SELECT * FROM planets WHERE id = %s"
@@ -37,14 +39,17 @@ def select(id):
     
     return planet
 
+
 def delete_all():
     sql = "DELETE FROM planets"
     run_sql(sql)
+
 
 def delete(id):
     sql = "DELETE FROM planets WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
 
 def update(planet):
     sql = """UPDATE planets SET (name, planet_class, native species, rating, explored) = (%s, %s, %s, %s, %s)
