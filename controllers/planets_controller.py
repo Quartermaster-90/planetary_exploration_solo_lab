@@ -19,7 +19,7 @@ def planets():
 @planets_blueprint.route("/planets/new", methods =['GET'])
 def new_planet():
     # cities = city_repository.select_all()
-    return render_template("planets/new.html")
+    return render_template("/planets/new.html")
 
 
 @planets_blueprint.route("/planets", methods=['POST'])
@@ -33,7 +33,7 @@ def create_planet():
     return redirect("/planets")
 
 
-@planets_blueprint.route("planets/<id>", methods=['GET'])
+@planets_blueprint.route("/planets/<id>", methods=['GET'])
 def show_planet(id):
     planet = planet_repository.select(id)
     cities = city_repository.cities_for_planet(planet)
