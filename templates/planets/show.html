@@ -6,20 +6,26 @@
     <div>Class: {{planet.planet_class}}</div>
     <div>Native Species: {{planet.native_species}}</div>
     <div>Rating: {{planet.rating}}</div>
-    <p>{% for city in cities %}
+    <p><h3>Cities:</h3>
+      {% for city in cities %}
         <div class="cities_in_planet">
             <a href="/cities/{{city.id}}">{{city.name}}</a>
     {% endfor %}</p>
     <div class="buttons">
 
-        <span><form action="/planets/{{planet.id}}/edit" method="GET">
-          <input class="btn btn--edit" type="submit" value="Edit"/>
+      <span><form action="/cities/new" method="GET">
+        <input class="btn btn--edit" type="submit" value="Add City"/>
+        </form>
+      </span>  
+      
+      <span><form action="/planets/{{planet.id}}/edit" method="GET">
+          <input class="btn btn--edit" type="submit" value="Edit Planet"/>
           </form>
         </span>
 
         <span>
           <form action="/planets/{{planet.id}}/delete" method="POST">
-            <input class="btn btn--danger" type="submit" value="Delete"/>
+            <input class="btn btn--danger" type="submit" value="Delete Planet"/>
           </form>
         </span>
 
