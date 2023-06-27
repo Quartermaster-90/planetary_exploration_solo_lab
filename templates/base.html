@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Planetary Explorations Inc.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/tables.css') }}">
+</head>
+<body>
+<main class="menu">
+    <nav aria-label="Primary">
+        <ul>
+          <li><a href="/index">Homepage</a></li>
+          <li><a href="/planets">Planets</a></li>
+          <li><a href="/cities">Cities</a></li>
+        </ul>
+      </nav>
+  <section id="content">
+      {% block content %}
+
+      {% endblock%}
+  </section>
+  </main>
+</body>
+</html>

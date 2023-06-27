@@ -42,7 +42,7 @@ def show_city(id):
 
 @cities_blueprint.route("/cities/<id>/edit", methods=['GET'])
 def edit_city(id):
-    city = city_repository.select(id)
+    city    = city_repository.select(id)
     planets = planet_repository.select_all()
     return render_template("/cities/edit.html", city = city, all_planets = planets)
 
