@@ -19,7 +19,10 @@
 {% endfor %}
 
 <div>
-<p><a href="/cities/new">New City</a></p>
-</div>
+   <span><form action="/cities/new" method="GET">
+     <input class="btn btn--new" type="submit" value="New City"/>
+     </form>
+   </span>
+ </div>
 
 {% endblock %}

@@ -14,7 +14,10 @@
 {% endfor %}
 
 <div>
-<p><a href="/planets/new">New Planet</a></p>
+  <span><form action="/planets/new" method="GET">
+    <input class="btn btn--new" type="submit" value="New Planet"/>
+    </form>
+  </span>
 </div>
 
 {% endblock %}

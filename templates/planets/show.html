@@ -12,9 +12,16 @@
     {% endfor %}</p>
     <div class="buttons">
 
-        <span><a href="/planets/{{planet.id}}/edit">Edit</a></span>
+        <span><form action="/planets/{{planet.id}}/edit" method="GET">
+          <input class="btn btn--edit" type="submit" value="Edit"/>
+          </form>
+        </span>
 
-        <span><a href="/planets/{{planet.id}}/delete" method="POST">Delete</a></span>
+        <span>
+          <form action="/planets/{{planet.id}}/delete" method="POST">
+            <input class="btn btn--danger" type="submit" value="Delete"/>
+          </form>
+        </span>
 
 
     

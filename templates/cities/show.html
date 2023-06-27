@@ -8,9 +8,16 @@
     <div>Comments: {{city.comments}}</div>
     <div>Visited Status: {{city.visited}}</div>
 
-    <span><a href="/cities/{{city.id}}/edit">Edit</a></span>
+    <span><form action="/cities/{{city.id}}/edit" method="GET">
+      <input class="btn btn--edit" type="submit" value="Edit"/>
+      </form>
+    </span>
 
-    <span><a href="/cities/{{city.id}}/delete" method="POST">Delete</a></span>
+    <span>
+      <form action="/cities/{{city.id}}/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="Delete"/>
+      </form>
+    </span>
 
 
     

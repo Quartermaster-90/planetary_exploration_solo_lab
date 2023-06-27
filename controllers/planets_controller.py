@@ -58,7 +58,7 @@ def update_planet(id):
     return redirect("/planets")
 
 
-@planets_blueprint.route("/planets/<id>/delete", methods=['POST]'])
+@planets_blueprint.route("/planets/<id>/delete", methods=['POST'])
 def delete_planet(id):
     planet_repository.delete(id)
     return redirect("/planets")
