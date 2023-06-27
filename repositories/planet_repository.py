@@ -5,20 +5,21 @@ from models.planet import Planet
 import repositories.city_repository as city_repository
 
 def save(planet):
-    sql = """INSERT INTO planets (name, planet_class, native_species, rating)
-             VALUES (%s, %s, %s, %s, %s)
-             RETURNING *"""
-    values = [planet.name, planet.planet_class, planet.native_species, planet.rating]
-    results = run_sql(sql, values)
-    id = results[0]['id']
+    sql       = """INSERT INTO planets (name, planet_class, native_species, rating)
+                   VALUES (%s, %s, %s, %s, %s)
+                   RETURNING *"""
+    values    = [planet.name, planet.planet_class, planet.native_species, planet.rating]
+    results   = run_sql(sql, values)
+    id        = results[0]['id']
     planet.id = id
+    
     return planet
 
 
 def select_all():
     planets = []
 
-    sql = "SELECT * FROM planets"
+    sql     = "SELECT * FROM planets"
     results = run_sql(sql)
 
     for row in results:
@@ -30,7 +31,7 @@ def select_all():
 
 def select(id):
     planet = None
-    sql = "SELECT * FROM planets WHERE id = %s"
+    sql    = "SELECT * FROM planets WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
 
@@ -52,7 +53,7 @@ def delete(id):
 
 
 def update(planet):
-    sql = """UPDATE planets SET (name, planet_class, native species, rating, explored) = (%s, %s, %s, %s, %s)
-             WHERE id = %s"""
+    sql    = """UPDATE planets SET (name, planet_class, native species, rating, explored) = (%s, %s, %s, %s, %s)
+                WHERE id = %s"""
     values = [planet.name, planet.planet_class, planet.native_species, planet.rating]
     run_sql(sql, values)
