@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% for planet in all_planets %}
+  <div class="planet">
+    <div class="content">
+      <a href="/planets/{{planet.id}}">{{planet.name}}</a>
+      <div class="planet_information">
+        <span class="planet_class">{{planet.planet_class}}</span>
+        <span class="native_species">{{planet.native_species}}</span>
+        <span class="rating">{{planet.rating}}</span>
+      </div>
+      <div class="buttons">
+
+        <form class="delete-form" action="/planets/{{planet.id}}/delete" method="POST">
+          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+        </form>
+
+          <i class="fa fa-check fa-2x" style="color:green" aria-hidden="true"></i>
+
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}

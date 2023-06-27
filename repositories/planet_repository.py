@@ -6,7 +6,7 @@ import repositories.city_repository as city_repository
 
 def save(planet):
     sql       = """INSERT INTO planets (name, planet_class, native_species, rating)
-                   VALUES (%s, %s, %s, %s, %s)
+                   VALUES (%s, %s, %s, %s)
                    RETURNING *"""
     values    = [planet.name, planet.planet_class, planet.native_species, planet.rating]
     results   = run_sql(sql, values)
@@ -36,7 +36,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        planet = Planet(result['name'], result['planet_class'], result['native species'], result['rating'], result['id'])
+        planet = Planet(result['name'], result['planet_class'], result['native_species'], result['rating'], result['id'])
     
     return planet
 
@@ -53,7 +53,7 @@ def delete(id):
 
 
 def update(planet):
-    sql    = """UPDATE planets SET (name, planet_class, native species, rating, explored) = (%s, %s, %s, %s, %s)
+    sql    = """UPDATE planets SET (name, planet_class, native species, rating) = (%s, %s, %s, %s)
                 WHERE id = %s"""
     values = [planet.name, planet.planet_class, planet.native_species, planet.rating]
     run_sql(sql, values)
