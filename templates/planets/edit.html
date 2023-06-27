@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/planets/{{planet.id}}" method="post">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{planet.name}}" required autofocus>
+  </div>
+
+  <div>
+    <label for="planet_class">Planet Class:</label>
+    <input type="text" id="planet_class" name="planet_class" value="{{planet.planet_class}}" required autofocus>
+  </div>
+
+  <div>
+    <label for="native_species">Native Species:</label>
+    <input type="text" id="native_species" name="native_species" value="{{planet.native_species}}" required autofocus>
+  </div>
+
+  <div>
+    <label for="rating">Rating:</label>
+    <input type="number" id="rating" name="rating" value="{{planet.rating}}" required>
+  </div>
+
+  <button type="submit">Update Planet</button>
+
+</form>
+
+{% endblock %}

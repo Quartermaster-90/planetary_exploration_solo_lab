@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/planets" method="post">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Name" required autofocus>
+  </div>
+
+  <div>
+    <label for="planet_class">Planet Class:</label>
+    <input type="text" id="planet_class" name="planet_class" placeholder="Planet Class" required autofocus>
+  </div>
+
+  <div>
+    <label for="native_species">Native Species:</label>
+    <input type="text" id="native_species" name="native_species" placeholder="Native Species" required autofocus>
+  </div>
+
+  <div>
+    <label for="rating">Rating:</label>
+    <input type="number" id="rating" name="rating" placeholder="Rating" required>
+  </div>
+
+  <button type="submit">Create New Planet</button>
+
+</form>
+
+{% endblock %}

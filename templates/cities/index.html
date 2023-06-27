@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Seek out new life and new civilisations...</h3>
+{% for city in all_cities %}
+  <div class="explored_cities">
+      <p><a href="/cities/{{city.id}}">{{city.name}}</a></p>
+      <div class="city_information">
+        <div class="planet_id">Planet: <b>{{city.planet}}</b></div>
+        <div class="number">Rating: <b>{{city.rating}}</b></div>
+        
+     {% if city.visited == True %}
+        <i class="fa fa-check fa-2x" style="color:lawngreen" aria-hidden="true"></i>
+     {% else %}
+        <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+     {% endif %}   
+  </div>
+
+{% endfor %}
+
+<div>
+<p><a href="/cities/new">New City</a></p>
+</div>
+
+{% endblock %}

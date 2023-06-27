@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <div>
+    <h2>{{planet.name}}</h2>
+    <div>Class: {{planet.planet_class}}</div>
+    <div>Native Species: {{planet.native_species}}</div>
+    <div>Rating: {{planet.rating}}</div>
+    <p>{% for city in cities %}
+        <div class="cities_in_planet">
+            <a href="/cities/{{city.id}}">{{city.name}}</a>
+    {% endfor %}</p>
+    <div class="buttons">
+
+        <span><a href="/planets/{{planet.id}}/edit">Edit</a></span>
+
+        <span><a href="/planets/{{planet.id}}/delete" method="POST">Delete</a></span>
+
+
+    
+  </div>
+
+{% endblock %}

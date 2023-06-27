@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/cities/{{city.id}}" method="post">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{city.name}}" required autofocus>
+  </div>
+
+  <div>
+    <label for="planet">Planet:</label>
+    <input type="text" id="planet" name="planet" value="{{city.planet}}" required autofocus>
+  </div>
+  
+  <div>
+      <label for="rating">Rating:</label>
+      <input type="number" id="rating" name="rating" value="{{city.rating}}" required>
+    </div>
+    
+    <div>
+      <label for="comments">Comments:</label>
+      <input type="text" id="comments" name="comments" value="{{city.comments}}" required autofocus>
+    </div>
+
+    <div>
+        <label for="visited">Visited:</label>
+        <select id="visited" name="visited">
+    
+          <option value="true"
+            {% if city.visited == True %} selected="selected" {% endif %}>
+            True
+          </option>
+    
+          <option value="false"
+            {% if city.visited == False %} selected="selected" {% endif %}>
+            False
+          </option>
+    
+        </select>
+      </div>
+
+  <button type="submit">Update Planet</button>
+
+</form>
+
+{% endblock %}
