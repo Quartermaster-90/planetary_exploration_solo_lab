@@ -18,7 +18,8 @@ def cities():
 
 @cities_blueprint.route("/cities/new", methods =['GET'])
 def new_city():
-    return render_template("cities/new.html")
+    planets = planet_repository.select_all()
+    return render_template("cities/new.html", planets = planets)
 
 
 @cities_blueprint.route("/cities", methods=['POST'])
@@ -29,7 +30,7 @@ def create_city():
     comments  = request.form['comments']
     explored  = request.form['explored']
     planet    = planet_repository.select(planet_id)
-    city      = city(name, planet, rating, comments, explored)
+    city      = City(name, planet, rating, comments, explored)
     city_repository.save(city)
     return redirect("/cities")
 
@@ -45,6 +46,13 @@ def edit_city(id):
     city    = city_repository.select(id)
     planets = planet_repository.select_all()
     return render_template("cities/edit.html", city = city, all_planets = planets)
+
+
+@cities_blueprint.route("/cities/search", methods=['POST'])
+def search_city():
+    search_input = request.form['search_input']
+    city = city_repository.search_city_name(search_input)
+    return render_template("cities/show.html", city = city)
 
 
 @cities_blueprint.route("/cities/<id>", methods=['POST'])

@@ -9,6 +9,9 @@ body {
     font-family: 'Play', sans-serif;
     padding: 0px;
     margin: 0px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
 .wrapper {
@@ -129,6 +132,7 @@ main {
 
 footer {
     text-align: center;
+    margin-top: auto;
     padding: 5px;
     background-color: #0d5f5f;
     color: #ffffff;

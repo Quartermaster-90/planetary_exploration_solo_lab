@@ -76,6 +76,20 @@ def cities_for_planet(planet):
     return cities
 
 
+def search_city_name(name):
+    city = None
+
+    sql = "SELECT * FROM cities WHERE LOWER(name) = LOWER(%s)"
+    values = [name]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        planet = planet_repository.select(result['planet_id'])
+        city   = City(result['name'], planet, result['rating'], result['comments'], result['explored'], result['id'])
+    
+    return city
+
+
 # def city_names_for_planet(planet):
 #     cities = []
 

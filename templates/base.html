@@ -28,7 +28,10 @@
           <span><a href="/cities">Cities</a></span>
         </ul>
         <div>
-          <input type="text" placeholder="Search..">
+          <form action="/cities/search" method="POST">
+            <input type="text" name="search_input" placeholder="Search for City">
+            <input type="submit" value="search">
+            </form>
         </div>
         <hr>
       </nav>

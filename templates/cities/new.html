@@ -9,7 +9,11 @@
 
   <div>
     <label for="planet">Planet:</label>
-    <input type="text" id="planet" name="planet" placeholder="Planet" required autofocus>
+    <select id="planet" name="planet_id">
+      {% for planet in planets %}
+       <option value="{{planet.id}}">{{planet.name}}</option> 
+      {% endfor %}
+      </select>
   </div>
   
   <div>
@@ -30,7 +34,7 @@
 
   <div>
     <label for="visited">Visited:</label>
-    <select id="visited" name="visited">
+    <select id="visited" name="explored">
       <option value="true">Visited</option>
       <option value="false">Not Visited</option>
     </select>

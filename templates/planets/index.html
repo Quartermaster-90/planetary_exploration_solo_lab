@@ -3,31 +3,32 @@
 
 <h3>Explore strange new worlds...</h3>
 <ul>{% for planet in all_planets %}
-  <div class="explored_planets"></div>
+  <div class="explored_planets">
       <p><a href="/planets/{{planet.id}}">{{planet.name}}</a></p>
-      <div class="planet_information"></div>
+      <div class="planet_information">
         <div class="planet_class">Class: <b>{{planet.planet_class}}</b></div>
         <div class="native_species">Native Species: <b>{{planet.native_species}}</b></div>
         <div class="rate">Rating:  
-          <input type="radio" id="star5" name="rate" value="5" />
-          <label for="star5" title="text">5 stars</label>
-          <input type="radio" id="star4" name="rate" value="4" />
-          <label for="star4" title="text">4 stars</label>
-          <input type="radio" id="star3" name="rate" value="3" />
-          <label for="star3" title="text">3 stars</label>
-          <input type="radio" id="star2" name="rate" value="2" />
-          <label for="star2" title="text">2 stars</label>
-          <input type="radio" id="star1" name="rate" value="1" />
-          <label for="star1" title="text">1 star</label>
+          <input type="radio" id="star5{{planet.id}}" name="{{planet.id}}" value="5" />
+          <label for="star5{{planet.id}}" title="text">5 stars</label>
+          <input type="radio" id="star4{{planet.id}}" name="{{planet.id}}" value="4" />
+          <label for="star4{{planet.id}}" title="text">4 stars</label>
+          <input type="radio" id="star3{{planet.id}}" name="{{planet.id}}" value="3" />
+          <label for="star3{{planet.id}}" title="text">3 stars</label>
+          <input type="radio" id="star2{{planet.id}}" name="{{planet.id}}" value="2" />
+          <label for="star2{{planet.id}}" title="text">2 stars</label>
+          <input type="radio" id="star1{{planet.id}}" name="{{planet.id}}" value="1" />
+          <label for="star1{{planet.id}}" title="text">1 star</label>
         </div>
-
+      </div>
+    </div>
+    <br>
 {% endfor %}</ul>
 
-<div>
-  <span><form action="/planets/new" method="GET">
-    <input class="btn btn--new" type="submit" value="New Planet"/>
-    </form>
+  <br>
+  <br>
+  <span>
+    <a href="/planets/new"><button class="btn btn--new">New Planet</button></a>
   </span>
-</div>
 
 {% endblock %}
