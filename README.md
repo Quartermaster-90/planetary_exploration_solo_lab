@@ -18,6 +18,14 @@ The idea behind this app is to allow a user to track and log their adventures ac
 
 The user can log data such as the planet/city name, a rating for each, comments, and check whether they've been there or not, amongst other features (some to be implemented in a future version).
 
+## Technology Used
+
+* Python
+* Flask with Jinja template render
+* PostgreSQL with psycopg
+* HTML
+* CSS
+
 ## Screenshot Example
 
 <img width="1336" alt="Screenshot 2023-06-28 at 16 24 33" src="https://github.com/Quartermaster-90/planetary_exploration_solo_lab/assets/132846070/b90da1bb-83f1-419a-aac7-ee537e4de9ba">
