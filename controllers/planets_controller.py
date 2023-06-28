@@ -16,7 +16,6 @@ def planets():
     if "search_input" in request.args:
         search_input = request.args['search_input']
         planets = planet_repository.search_planet_name(search_input)
-        # breakpoint()
     else:
         planets = planet_repository.select_all()
     return render_template("planets/index.html", all_planets = planets)
@@ -24,7 +23,6 @@ def planets():
 
 @planets_blueprint.route("/planets/new", methods =['GET'])
 def new_planet():
-    # cities = city_repository.select_all()
     return render_template("planets/new.html")
 
 
@@ -49,7 +47,6 @@ def show_planet(id):
 @planets_blueprint.route("/planets/<id>/edit", methods=['GET'])
 def edit_planet(id):
     planet = planet_repository.select(id)
-    # cities = city_repository.city_for_planet(planet)
     return render_template("planets/edit.html", planet = planet)
 
 
