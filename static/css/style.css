@@ -56,6 +56,16 @@ a:hover, a:active, a:focus {
     color: #64d7e6;
   }
 
+nav input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+  }
+  
+
 nav {
     padding: 0px;
     margin: 0px;
