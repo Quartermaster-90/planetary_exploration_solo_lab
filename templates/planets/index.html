@@ -2,16 +2,26 @@
 {% block content %}
 
 <h3>Explore strange new worlds...</h3>
-{% for planet in all_planets %}
-  <div class="explored_planets">
+<ul>{% for planet in all_planets %}
+  <div class="explored_planets"></div>
       <p><a href="/planets/{{planet.id}}">{{planet.name}}</a></p>
-      <div class="planet_information">
-        <span class="planet_class">Class: <b>{{planet.planet_class}}</b></span>
-        <span class="native_species">Native Species: <b>{{planet.native_species}}</b></span>
-        <span class="rating">Rating: <b>{{planet.rating}}</b></span>
-      </div>
+      <div class="planet_information"></div>
+        <div class="planet_class">Class: <b>{{planet.planet_class}}</b></div>
+        <div class="native_species">Native Species: <b>{{planet.native_species}}</b></div>
+        <div class="rate">Rating:  
+          <input type="radio" id="star5" name="rate" value="5" />
+          <label for="star5" title="text">5 stars</label>
+          <input type="radio" id="star4" name="rate" value="4" />
+          <label for="star4" title="text">4 stars</label>
+          <input type="radio" id="star3" name="rate" value="3" />
+          <label for="star3" title="text">3 stars</label>
+          <input type="radio" id="star2" name="rate" value="2" />
+          <label for="star2" title="text">2 stars</label>
+          <input type="radio" id="star1" name="rate" value="1" />
+          <label for="star1" title="text">1 star</label>
+        </div>
 
-{% endfor %}
+{% endfor %}</ul>
 
 <div>
   <span><form action="/planets/new" method="GET">

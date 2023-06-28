@@ -10,9 +10,13 @@
         <div class="number">Rating: <b>{{city.rating}}</b></div>
         
      {% if city.visited == True %}
-        <i class="fa fa-check fa-2x" style="color:lawngreen" aria-hidden="true"></i>
+        <i class="material-symbols-outlined" aria-hidden="true">
+        check_circle
+      </i>
      {% else %}
-        <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+        <i class="material-symbols-outlined">
+        cancel
+      </i>
      {% endif %}   
   </div>
 

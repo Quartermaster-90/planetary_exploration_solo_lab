@@ -6,7 +6,15 @@
     <div>Planet: {{city.planet}}</div>
     <div>Rating: {{city.rating}}</div>
     <div>Comments: {{city.comments}}</div>
-    <div>Visited Status: {{city.visited}}</div>
+    <div>{% if city.visited == True %}
+      <i class="material-symbols-outlined">
+        check_circle
+      </i>
+    {% else %}
+      <i class="material-symbols-outlined">
+        cancel
+      </i>
+    {% endif %}
 
     <span><form action="/cities/{{city.id}}/edit" method="GET">
       <input class="btn btn--edit" type="submit" value="Edit"/>

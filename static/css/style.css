@@ -1,0 +1,125 @@
+body {
+    background: url('/static/images/background.jpg');
+    box-sizing: border-box;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    color: #ffffff;
+    font-family: 'Play', sans-serif;
+    padding: 0px;
+    margin: 0px;
+  }
+
+.wrapper {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.page-header, .page-footer {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.page-body {
+    flex-grow: 1;
+}
+
+
+h1 {
+    font-family: 'Bruno Ace SC', cursive;
+    margin: 0px;
+    padding: 0px;
+  }
+
+h2 {
+    font-family: 'Play', sans-serif;
+    color: #ffffff;
+    margin: 0px;
+    padding: 0px;
+  }
+
+h3 {
+    font-family: 'Play', sans-serif;
+    color: #ffffff;
+    margin: 10px;
+    padding: 10px;
+  }
+
+a, a:link, a:visited {
+    color: #d1f8ff;
+    text-decoration: none;
+  }
+  
+a:hover, a:active, a:focus {
+    color: #64d7e6;
+  }
+
+nav {
+    padding: 0px;
+    margin: 0px;
+    padding-right: 25px;
+  }
+  
+nav ul li {
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  
+ul {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+  }
+  
+main {
+    padding: 25px;
+  }
+
+.rating{
+    margin: 0;
+    padding: 0;
+}
+.rate {
+    float: left;
+    height: 5px;
+    padding: 0px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:13px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+footer {
+    text-align: center;
+    padding: 5px;
+    background-color: #0d5f5f;
+    color: #ffffff;
+  }
