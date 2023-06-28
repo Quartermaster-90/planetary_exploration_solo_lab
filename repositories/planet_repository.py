@@ -57,3 +57,16 @@ def update(planet):
                 WHERE id = %s"""
     values = [planet.name, planet.planet_class, planet.native_species, planet.rating]
     run_sql(sql, values)
+
+
+def search_planet_name(name):
+    planet = None
+
+    sql = "SELECT * FROM planets WHERE LOWER(name) = LOWER(%s)"
+    values = [name]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        planet = Planet(result['name'], result['planet_class'], result['native_species'], result['rating'], result['id'])
+    
+    return planet

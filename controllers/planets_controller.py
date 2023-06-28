@@ -47,6 +47,13 @@ def edit_planet(id):
     return render_template("planets/edit.html", planet = planet)
 
 
+@planets_blueprint.route("/planets/search", methods=['POST'])
+def search_planet():
+    search_input = request.form['search_input']
+    planet       = planet_repository.search_planet_name(search_input)
+    return render_template("cities/show.html", planet = planet)
+
+
 @planets_blueprint.route("/planets/<id>", methods=['POST'])
 def update_planet(id):
     name           = request.form['name']

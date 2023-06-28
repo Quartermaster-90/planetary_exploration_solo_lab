@@ -51,7 +51,7 @@ def edit_city(id):
 @cities_blueprint.route("/cities/search", methods=['POST'])
 def search_city():
     search_input = request.form['search_input']
-    city = city_repository.search_city_name(search_input)
+    city         = city_repository.search_city_name(search_input)
     return render_template("cities/show.html", city = city)
 
 
