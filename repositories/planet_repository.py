@@ -60,13 +60,14 @@ def update(planet):
 
 
 def search_planet_name(name):
-    planet = None
+    planets = []
 
     sql = "SELECT * FROM planets WHERE LOWER(name) = LOWER(%s)"
     values = [name]
-    result = run_sql(sql, values)[0]
+    results = run_sql(sql, values)
 
-    if result is not None:
-        planet = Planet(result['name'], result['planet_class'], result['native_species'], result['rating'], result['id'])
+    for row in results:
+        planet = Planet(row['name'], row['planet_class'], row['native_species'], row['rating'], row['id'])
+        planets.append(planet)
     
-    return planet
+    return planets

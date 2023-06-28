@@ -1,8 +1,10 @@
 .btn {
     border:0px none;
     padding: 4px 8px;
-    color: #FFFFFF;
+    color: #ffffff;
     cursor:pointer;
+    display: inline-block;
+    margin: 4px 4px 4px 4px;
   }
   
   .btn--danger {
@@ -23,10 +25,16 @@
   
   .btn--search {
     background-color: #315d13;
+    margin: 0px 0px 0px 0px;
+
   }
   
   .btn--edit {
     background-color: #357c05; 
+  }
+
+  .btn--new {
+    background-color: #215f8c; 
   }
 
   .btn--wrapper {

@@ -10,18 +10,19 @@
         <div class="number">Rating: <b>{{city.rating}}</b></div>
         
      {% if city.explored == True %}
-        <i class="material-symbols-outlined" aria-hidden="true">
+        <i class="material-symbols-outlined" style="color:rgb(0, 255, 0)" aria-hidden="true">
         check_circle
       </i>
      {% else %}
-        <i class="material-symbols-outlined">
+        <i class="material-symbols-outlined" style="color:rgb(255, 0, 0)" aria-hidden="true">
         cancel
       </i>
      {% endif %}   
   </div>
 
 {% endfor %}</ul>
-
+<br>
+<br>
 <div>
    <span><form action="/cities/new" method="GET">
      <input class="btn btn--new" type="submit" value="New City"/>

@@ -10,6 +10,4 @@ class Planet:
 
     def __repr__(self):
         return self.name
-
-    # def mark_explored(self):
-    #     self.explored = True
+    
