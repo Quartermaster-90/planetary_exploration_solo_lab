@@ -28,13 +28,13 @@
           <span><a href="/cities">Cities</a></span>
         </ul>
         <div>
-          <form action="/cities/search" method="POST">
+          <form action="/cities">
             <input type="text" name="search_input" placeholder="Search for City">
-            <input type="submit" value="Search City">
+            <input class="btn btn--search" type="submit" value="Search City">
             </form>
         </div>
-        <hr>
       </nav>
+      <hr>
   <section id="content">
       {% block content %}
 

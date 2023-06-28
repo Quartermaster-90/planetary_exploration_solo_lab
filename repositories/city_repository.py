@@ -77,28 +77,15 @@ def cities_for_planet(planet):
 
 
 def search_city_name(name):
-    city = None
+    cities = []
 
     sql = "SELECT * FROM cities WHERE LOWER(name) = LOWER(%s)"
     values = [name]
-    result = run_sql(sql, values)[0]
+    results = run_sql(sql, values)
 
-    if result is not None:
-        planet = planet_repository.select(result['planet_id'])
-        city   = City(result['name'], planet, result['rating'], result['comments'], result['explored'], result['id'])
+    for row in results:
+        planet = planet_repository.select(row['planet_id'])
+        city   = City(row['name'], planet, row['rating'], row['comments'], row['explored'], row['id'])
+        cities.append(city)
     
-    return city
-
-
-# def city_names_for_planet(planet):
-#     cities = []
-
-#     sql     = "SELECT name FROM cities WHERE planet_id = %s"
-#     values  = [planet.id]
-#     results = run_sql(sql, values)
-
-#     for row in results:
-#         city = City(row['name'])
-#         cities.append(city)
-
-#     return cities
+    return cities
